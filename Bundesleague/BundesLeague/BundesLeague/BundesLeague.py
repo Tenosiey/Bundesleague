@@ -3,6 +3,12 @@ invalid_input_Tag = True
 teamName = "a"
 teamTag = "a"
 
+topLane = "top"
+jungleLane = "jung"
+midLane = "mid"
+adcLane = "adc"
+supportLane = "sup"
+
 def main():
 	global invalid_input
 	global teamName
@@ -40,7 +46,7 @@ def secondary():
 
 	if teamTagCorrect == "y":
 		f = open(teamName + ".txt","a")
-		f.write("teamTag = " + teamTag)
+		f.write("teamTag = " + teamTag + "\n" + "\n")
 		f.close()
 
 		invalid_input_Tag = False
@@ -56,11 +62,21 @@ def secondary():
 		invalid_input_Tag = True
 
 def teamMember():
-	topLane = a
-	jungleLane = b
-	midLane = c
-	adcLane = d
-	supportLane = e
+	global teamName
+
+	topLane = input("Please enter the username of your Top Laner\n")
+	jungleLane = input("Please enter the username of your Jungler\n")
+	midLane = input("Please enter the username of your Mid Laner\n")
+	adcLane = input("Please enter the username of your ADC\n")
+	supportLane = input("Please enter the username of your Supporter\n")
+
+	f = open(teamName + ".txt","a")
+	f.write("topLane = " + topLane + "\n")
+	f.write("jungleLane = " + jungleLane + "\n")
+	f.write("midLane = " + midLane + "\n")
+	f.write("adcLane = " + adcLane + "\n")
+	f.write("supportLane = " + supportLane + "\n")
+	f.close()
 
 while invalid_input == True:
 	
@@ -75,3 +91,5 @@ while invalid_input_Tag == True:
 		break
 
 	secondary()
+
+teamMember()
