@@ -42,6 +42,7 @@ def secondary():
 	global teamTag
 
 	teamTag = input("Please enter your Teamtag.\n")
+
 	teamTagCorrect = input("So your Teamtag is " + teamTag + ", correct? y/n\n")
 
 	if teamTagCorrect == "y":
@@ -71,6 +72,7 @@ def teamMember():
 	supportLane = input("Please enter the username of your Supporter\n")
 
 	f = open(teamName + ".txt","a")
+
 	f.write("topLane = " + topLane + "\n")
 	f.write("jungleLane = " + jungleLane + "\n")
 	f.write("midLane = " + midLane + "\n")
